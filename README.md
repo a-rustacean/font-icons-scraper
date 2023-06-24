@@ -39,7 +39,7 @@ Once the installation is complete, you can run the html scraper with the followi
 scrap-icons {CSS URL} {OUTPUT FOLDER}
 ```
 
-Here are some exaple URLs you can use:
+Here are some example URLs you can use:
 - https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css
 - https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css
 - https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css
