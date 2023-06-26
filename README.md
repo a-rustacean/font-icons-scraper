@@ -1,5 +1,7 @@
 # Font Icons Scraper
 
+[![Compile](https://github.com/a-rustacean/font-icons-scraper/actions/workflows/rust-build.yml/badge.svg)](https://github.com/a-rustacean/font-icons-scraper/actions/workflows/rust-build.yml)
+
 Companies like Font Awesome leverage the concept of icon fonts to provide a convenient CDN solution for their font assets. Using
 scalable vector icons as font glyphs is made possible by icon fonts, making it simple to integrate and style using CSS. However,
 it is not feasible to access the entire collection of SVG icons from a premium CDN without the necessary authorisation.
@@ -18,7 +20,20 @@ to comply with
 
 ## Installation
 
-To install the font icons scraper, follow, these steps:
+You have two options to install the Font Icons Scraper:
+
+### 1. Downloading from GitHub Actions Artifacts
+
+If you prefer a pre-built version of the SVG Icon Extractor, you can download it from the GitHub Actions artifacts. Follow these steps:
+
+1. Go to the [Actions](../../actions) tab in the repository.
+2. Select the latest successful workflow run.
+3. In the workflow run details, navigate to the "Artifacts" section.
+4. Download the artifact.
+
+### 2. Building from Source
+
+If you want to build the Font Icons Scraper from source, follow these steps:
 
 1. Make sure your have rust installed on your machine.
 2. Clone this repository to your local machine.
