@@ -24,15 +24,6 @@ jobs:
           mkdir artifacts
 
           cp target/release/font-icons-scraper artifacts/font-icons-scraper
-
-          cd artifacts
-          mkdir svgs
-          cargo run --release -- https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css svgs
-          cargo run --release -- https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css svgs
-          cargo run --release -- https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css svgs
-          cargo run --release -- https://site-assets.fontawesome.com/releases/v6.4.0/css/shart-light.css svgs
-          zip -r svgs.zip svgs
-          rm -rf svgs
       - name: Save artifacts
         uses: actions/upload-artifact@v2
         with:
