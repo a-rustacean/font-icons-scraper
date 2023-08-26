@@ -1,1 +1,1 @@
-rm -rf $HOME/.local/bin/scrap-icons
+rm -rf $HOME/.local/bin/scrape-icons
