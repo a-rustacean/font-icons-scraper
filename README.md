@@ -44,7 +44,7 @@ If you want to build the Font Icons Scraper from source, follow these steps:
 ./install.sh
 ```
 
-This will set up the neccessary dependencies and configurations for the scraper.
+This will set up the necessary dependencies and configurations for the scraper.
 
 ## Usage
 
