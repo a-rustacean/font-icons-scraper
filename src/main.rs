@@ -2,10 +2,11 @@ use args::FontIconsScraperArgs;
 use clap::Parser;
 use font_icons_scraper::scrap_font_icons;
 mod args;
-use std::{fs::create_dir, io::ErrorKind, path::Path, process::exit};
+use std::{path::Path, process::exit};
+use tokio::{fs::create_dir, io::ErrorKind};
 
-fn write<P: AsRef<Path>, C: AsRef<[u8]>>(path: P, contents: C) {
-    if let Err(err) = std::fs::write(path.as_ref(), contents) {
+async fn write<P: AsRef<Path>, C: AsRef<[u8]>>(path: P, contents: C) {
+    if let Err(err) = tokio::fs::write(path.as_ref(), contents).await {
         eprintln!(
             "Unable to write file \"{}\": {}",
             path.as_ref().to_str().unwrap(),
@@ -18,7 +19,7 @@ fn write<P: AsRef<Path>, C: AsRef<[u8]>>(path: P, contents: C) {
 #[tokio::main]
 async fn main() {
     let args = FontIconsScraperArgs::parse();
-    if let Err(error) = create_dir(&args.output_dir) {
+    if let Err(error) = create_dir(&args.output_dir).await {
         if error.kind() != ErrorKind::AlreadyExists {
             eprintln!(
                 "Unable to create directory \"{}\"",
@@ -27,16 +28,18 @@ async fn main() {
             exit(1);
         }
     };
-    let icons = match scrap_font_icons(args.url.clone(), args.depth.unwrap_or(0)).await {
-        Ok(v) => v,
-        Err(err) => {
-            eprintln!(
-                "Unable to scrap font icons from url \"{}\": {}",
-                args.url, err
-            );
-            exit(1);
-        }
-    };
+    let icons =
+        match scrap_font_icons(args.url.clone(), args.depth.unwrap_or(0)).await
+        {
+            Ok(v) => v,
+            Err(err) => {
+                eprintln!(
+                    "Unable to scrap font icons from url \"{}\": {}",
+                    args.url, err
+                );
+                exit(1);
+            }
+        };
 
     for (name, svg) in icons {
         let output_file = format!(
@@ -45,6 +48,6 @@ async fn main() {
             name
         );
         println!("Writing: {}", output_file);
-        write(output_file, svg);
+        write(output_file, svg).await;
     }
 }
