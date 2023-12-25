@@ -1,6 +1,6 @@
 # Font Icons Scraper
 
-[![Compile](https://github.com/a-rustacean/font-icons-scraper/actions/workflows/rust-build.yml/badge.svg)](https://github.com/a-rustacean/font-icons-scraper/actions/workflows/rust-build.yml)
+[![Lint](https://github.com/a-rustacean/font-icons-scraper/actions/workflows/lint.yml/badge.svg)](https://github.com/a-rustacean/font-icons-scraper/actions/workflows/lint.yml)
 
 Companies like Font Awesome leverage the concept of icon fonts to provide a convenient CDN solution for their font assets. Using
 scalable vector icons as font glyphs is made possible by icon fonts, making it simple to integrate and style using CSS. However,
