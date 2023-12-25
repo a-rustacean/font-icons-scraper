@@ -20,20 +20,7 @@ to comply with
 
 ## Installation
 
-You have two options to install the Font Icons Scraper:
-
-### 1. Downloading from GitHub Actions Artifacts
-
-If you prefer a pre-built version of the SVG Icon Extractor, you can download it from the GitHub Actions artifacts. Follow these steps:
-
-1. Go to the [Actions](../../actions/workflows/build.yml) tab in the repository.
-2. Select the latest successful workflow run.
-3. In the workflow run details, navigate to the "Artifacts" section.
-4. Download the artifact.
-
-### 2. Building from Source
-
-If you want to build the Font Icons Scraper from source, follow these steps:
+Pre-built binaries for Font Icons Scraper are not currently available, you can build it from source, follow these steps:
 
 1. Make sure your have rust installed on your machine.
 2. Clone this repository to your local machine.
@@ -62,6 +49,9 @@ Here are some example URLs you can use:
 
 The tool will start extracting SVG icons from the font files, providing you with individual SVG files for each icon.
 You can customize the extraction behavior or specify font files as needed within the code.
+
+> \[!Caution]
+> The css files may be subject to copyright, this software's owner is not responsible for any bad use of it.
 
 ## Uninstall
 
