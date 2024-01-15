@@ -6,7 +6,7 @@ about = "A tool to extract SVG icons from font files used by popular icon font s
 authors = ["Dilshad <a-rustacean@outlook.com>"]
 
 [dependencies]
-clap = { version = "4.4.11", features = ["derive"] }
+clap = { version = "4.4.16", features = ["derive"] }
 futures = "0.3.30"
 lazy_static = "1.4.0"
 regex = "1.10.2"
