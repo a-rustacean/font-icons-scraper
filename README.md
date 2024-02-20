@@ -42,10 +42,10 @@ scrape-icons <CSS URL> <OUTPUT FOLDER>
 ```
 
 Here are some example URLs you can use:
-- https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css
-- https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css
-- https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css
-- https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css
+- https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css
+- https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css
+- https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css
+- https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css
 
 The tool will start extracting SVG icons from the font files, providing you with individual SVG files for each icon.
 You can customize the extraction behavior or specify font files as needed within the code.
