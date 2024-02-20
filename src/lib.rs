@@ -41,8 +41,8 @@ impl OutlineBuilder for Builder<'_> {
 }
 
 struct Vector {
-    x: f32,
-    y: f32,
+    x: f64,
+    y: f64,
 }
 
 impl Debug for Vector {
@@ -81,6 +81,9 @@ struct RemappedBuilder<'a> {
 
 impl OutlineBuilder for RemappedBuilder<'_> {
     fn move_to(&mut self, x: f32, y: f32) {
+        let x = x as f64;
+        let y = y as f64;
+
         write!(
             self.buf,
             "M {} {} ",
@@ -97,6 +100,9 @@ impl OutlineBuilder for RemappedBuilder<'_> {
     }
 
     fn line_to(&mut self, x: f32, y: f32) {
+        let x = x as f64;
+        let y = y as f64;
+
         write!(
             self.buf,
             "L {} {} ",
@@ -113,6 +119,11 @@ impl OutlineBuilder for RemappedBuilder<'_> {
     }
 
     fn quad_to(&mut self, x1: f32, y1: f32, x: f32, y: f32) {
+        let x1 = x1 as f64;
+        let y1 = y1 as f64;
+        let x = x as f64;
+        let y = y as f64;
+        
         write!(
             self.buf,
             "Q {} {} {} {} ",
@@ -137,6 +148,13 @@ impl OutlineBuilder for RemappedBuilder<'_> {
     }
 
     fn curve_to(&mut self, x1: f32, y1: f32, x2: f32, y2: f32, x: f32, y: f32) {
+        let x1 = x1 as f64;
+        let y1 = y1 as f64;
+        let x2 = x2 as f64;
+        let y2 = y2 as f64;
+        let x = x as f64;
+        let y = y as f64;
+
         write!(
             self.buf,
             "C {} {} {} {} {} {} ",
@@ -235,8 +253,8 @@ fn font_to_svg(face: &mut Face) -> Vec<(String, String)> {
 
         path_buf.clear();
 
-        let width = bbox.x_max as f32 - bbox.x_min as f32;
-        let height = bbox.y_max as f32 - bbox.y_min as f32;
+        let width = bbox.x_max as f64 - bbox.x_min as f64;
+        let height = bbox.y_max as f64 - bbox.y_min as f64;
         let max_dim = width.max(height);
         let padding_x = (max_dim - width) / 2.0;
         let padding_y = (max_dim - height) / 2.0;
@@ -246,12 +264,12 @@ fn font_to_svg(face: &mut Face) -> Vec<(String, String)> {
                 buf: &mut path_buf,
                 input_rect: Rect {
                     start: Vector {
-                        x: bbox.x_min as f32 - padding_x,
-                        y: bbox.y_min as f32 - padding_y,
+                        x: bbox.x_min as f64 - padding_x,
+                        y: bbox.y_min as f64 - padding_y,
                     },
                     end: Vector {
-                        x: bbox.x_max as f32 + padding_x,
-                        y: bbox.y_max as f32 + padding_y,
+                        x: bbox.x_max as f64 + padding_x,
+                        y: bbox.y_max as f64 + padding_y,
                     },
                 },
                 output_rect: Vector {
