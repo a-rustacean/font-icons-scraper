@@ -123,7 +123,7 @@ impl OutlineBuilder for RemappedBuilder<'_> {
         let y1 = y1 as f64;
         let x = x as f64;
         let y = y as f64;
-        
+
         write!(
             self.buf,
             "Q {} {} {} {} ",
