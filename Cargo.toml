@@ -2,7 +2,7 @@
 name = "font-icons-scraper"
 version = "0.1.0"
 edition = "2021"
-about = "A tool to extract SVG icons from font files used by popular icon font services."
+description = "A tool to extract SVG icons from font files used by popular icon font services."
 authors = ["Dilshad <a-rustacean@outlook.com>"]
 
 [dependencies]
