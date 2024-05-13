@@ -12,5 +12,5 @@ lazy_static = "1.4.0"
 regex = "1.10.4"
 reqwest = "0.12.4"
 tokio = { version = "1.37.0", features = ["full"] }
-ttf-parser = "0.21.0"
+ttf-parser = "0.21.1"
 url = "2.5.0"
